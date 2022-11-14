@@ -1,0 +1,157 @@
+[
+    {
+        "Productid": "HT-1000",
+        "Name": "Notebook 15 Polegadas",
+        "Description": "Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Wid",
+        "Category": "CNTB",
+        "Supplierid": "0100000046",
+        "Measureunit": "CM",
+        "Weightmeasure": 9.85,
+        "Weightunit": "W 1",
+        "Price": 416.31,
+        "Currencycode": "BRL",
+        "Width": 6671.92,
+        "Depth": 2613.6,
+        "Height": 7960.43,
+        "Dimunit": "D 1",
+        "Createdat": "/Date(967833221000)/",
+        "Changedat": "/Date(1114281221000)/",
+        "Status": "E",
+        "Usercreate": "DLUBKE",
+        "Userupdate": "DLUBKE",
+        "Suppliername": "Tec4mobi",
+        "__metadata": {
+            "uri": "/Produtos('HT-1000')",
+            "type": "cds_zsd_producao_234.ProdutosType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Produtos('HT-1000')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "HT-1020",
+        "Name": "ITel0 Vault Net",
+        "Description": "Digital Organizer with State-of-the-Art Encryption for Storage and Network Communications",
+        "Category": "CPDA",
+        "Supplierid": "0100000047",
+        "Measureunit": "PCT",
+        "Weightmeasure": 2584.86,
+        "Weightunit": "W 2",
+        "Price": 5101.49,
+        "Currencycode": "BRL",
+        "Width": 7638.68,
+        "Depth": 100.85,
+        "Height": 8688.55,
+        "Dimunit": "D 2",
+        "Createdat": "/Date(1264181621000)/",
+        "Changedat": "/Date(1509212021000)/",
+        "Status": "P",
+        "Usercreate": "DLUBKE",
+        "Userupdate": "DLUBKE",
+        "Suppliername": "Silva & Santos",
+        "__metadata": {
+            "uri": "/Produtos('HT-1020')",
+            "type": "cds_zsd_producao_234.ProdutosType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Produtos('HT-1020')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "HT-1021",
+        "Name": "ITelO Vault SAT",
+        "Description": "Digital Organizer with State-of-the-Art Encryption for Storage and Secure Stellite Link",
+        "Category": "CPDA",
+        "Supplierid": "0100000055",
+        "Measureunit": "PCT",
+        "Weightmeasure": 9523.1,
+        "Weightunit": "W 3",
+        "Price": 8078.05,
+        "Currencycode": "BRL",
+        "Width": 3324.62,
+        "Depth": 591.67,
+        "Height": 4853.71,
+        "Dimunit": "D 3",
+        "Createdat": "/Date(1149186821000)/",
+        "Changedat": "/Date(1224696821000)/",
+        "Status": "P",
+        "Usercreate": "DLUBKE",
+        "Userupdate": "DLUBKE",
+        "Suppliername": "Informatica LTDA",
+        "__metadata": {
+            "uri": "/Produtos('HT-1021')",
+            "type": "cds_zsd_producao_234.ProdutosType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Produtos('HT-1021')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "HT-1031",
+        "Name": "Ergo Screen E-II",
+        "Description": "Optimum Hi-Resolution max. 1920 x 1200 @ 85Hz, Dot Pitch: 0.26mm",
+        "Category": "CSCR",
+        "Supplierid": "01000000169",
+        "Measureunit": "PCT",
+        "Weightmeasure": 4053.58,
+        "Weightunit": "W 4",
+        "Price": 7495.46,
+        "Currencycode": "BRL",
+        "Width": 7826.71,
+        "Depth": 3812,
+        "Height": 6152.62,
+        "Dimunit": "D 4",
+        "Createdat": "/Date(1190140421000)/",
+        "Changedat": "/Date(1157740421000)/",
+        "Status": "F",
+        "Usercreate": "DLUBKE",
+        "Userupdate": "DLUBKE",
+        "Suppliername": "SAMSUNG S.A",
+        "__metadata": {
+            "uri": "/Produtos('HT-1031')",
+            "type": "cds_zsd_producao_234.ProdutosType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Produtos('HT-1031')/to_cat"
+            }
+        }
+    },
+    {
+        "Productid": "HT-1037",
+        "Name": "Flat XL",
+        "Description": "Optimum Hi-Resolution max. 1920 x 1200 @ 85Hz, Dot Pitch: 0.26mm",
+        "Category": "CSCR",
+        "Supplierid": "01000000170",
+        "Measureunit": "PCT",
+        "Weightmeasure": 7116.64,
+        "Weightunit": "W 5",
+        "Price": 3189.11,
+        "Currencycode": "BRL",
+        "Width": 2884.41,
+        "Depth": 6673.2,
+        "Height": 3050.52,
+        "Dimunit": "D 5",
+        "Createdat": "/Date(1139247221000)/",
+        "Changedat": "/Date(1405362821000)/",
+        "Status": "E",
+        "Usercreate": "DLUBKE",
+        "Userupdate": "DLUBKE",
+        "Suppliername": "Lubke Corp",
+        "__metadata": {
+            "uri": "/Produtos('HT-1037')",
+            "type": "cds_zsd_producao_234.ProdutosType"
+        },
+        "to_cat": {
+            "__deferred": {
+                "uri": "/Produtos('HT-1037')/to_cat"
+            }
+        }
+    }
+]

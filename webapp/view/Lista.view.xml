@@ -1,0 +1,133 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.f" xmlns:fb="sap.ui.comp.filterbar" xmlns:svm="sap.ui.comp.smartvariants" controllerName="br.com.gestao.fioriappreport234.controller.Lista" displayBlock="true">
+    <Shell id="shell">
+        <App id="appID">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                        <SemanticPage xmlns="sap.f.semantic" id="pageLista" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false" titleAreaShrinkRatio="1:1.6:1.6" showFooter="false">
+                            <titleHeading>
+                                <m:Title xmlns:m="sap.m" text="{i18n>headingTitle}" id="title0"/>
+                            </titleHeading>
+
+                            <!-- Vamos ter as opções de filtros -->
+                            <headerContent>
+                                <fb:FilterBar id="filterbar" reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="true">
+                                    <fb:filterGroupItems>
+                                        <fb:FilterGroupItem xmlns:sap.m="sap.m" label="{i18n>fgitemProdutoId}" name="Produto ID" labelTooltip="{i18n>fgitemProdutoIdTooltip}" visibleInFilterBar="true" groupTitle="{i18n>fgitemProdutoGroup}" groupName="Principal" id="item0">
+                                            <fb:control>
+                                                <sap.m:Input width="100%" placeholder="{i18n>fgitemProdutoPlaceholder}" id="productIdInput" busyIndicatorSize="Auto"/>
+                                            </fb:control>
+                                        </fb:FilterGroupItem>
+
+                                        <fb:FilterGroupItem xmlns:sap.m="sap.m" label="{i18n>fgitemNomeProduto}" name="Nome Produto" labelTooltip="{i18n>fgitemNomeProdutoIdTooltip}" visibleInFilterBar="true" groupTitle="{i18n>fgitemProdutoGroup}" groupName="Principal" id="item1">
+                                            <fb:control>
+                                                <sap.m:Input width="100%" placeholder="{i18n>fgitemNomeProdutoPlaceholder}" id="productNameInput"/>
+                                            </fb:control>
+                                        </fb:FilterGroupItem>
+                                    </fb:filterGroupItems>
+                                </fb:FilterBar>
+                            </headerContent>
+
+                            <titleMainAction/>
+
+                            <titleCustomTextActions/>
+
+                            <titleCustomIconActions/>
+
+                            <content>
+                                <sap.m:Table xmlns:sap.m="sap.m" noDataText="{i18n>tbNoData}" id="tableProdutos" items="{path: '/Produtos', parameters:{expand : 'to_cat'}}">
+                                    <sap.m:items>
+                                        <sap.m:ColumnListItem press=" onSelectedItem" type="Active" id="item0_1666185249636">
+                                            <sap.m:cells>
+                                                <core:Icon src="sap-icon://product" size="3rem" id="icon0"/>
+                                                <Text xmlns="sap.m" text="{Productid}" id="text15"/>
+                                                <ObjectIdentifier xmlns="sap.m" title="{Name}" text="{Description}" id="identifier0"/>
+                                                <Text xmlns="sap.m" text="{to_cat/Description}" id="text17"/>
+                                                <Text xmlns="sap.m" text="{Supplierid}" id="text18"/>
+                                                <Text xmlns="sap.m" text="{Measureunit}" id="text19"/>
+                                                <!--{Price}-->
+                                                <ObjectNumber xmlns="sap.m" number="{ parts:[ {path:'Price'},{path:'Currencycode'} ], type: 'sap.ui.model.type.Currency', formatOptions:{showMeasure:false} }" unit="{Currencycode}" id="number0" state="Success"/>
+                                                <!--{Status}-->
+                                                <ObjectStatus xmlns="sap.m" text="{path: 'Status', formatter:'.statusProduto'}" state="{path: 'Status', formatter:'.stateProduto'}" id="status0" icon="{path: 'Status', formatter:'.iconProduto'}"/>
+                                                <!--Createdat-->
+                                                <!--
+                                                    { parts:[ {path:'Createdat'} ], formatter:'.date' }  >> { parts:[{path:'Parâmetro 1'},{path:'Parâmetro 2'}], formatter:'.NomeFunção' }
+                                                    { path: 'Createdat', formatter:'.date' } >> { path:'Parâmetro 1', formatter:'.NomeFunção' }
+                                                      
+                                                <Text xmlns="sap.m" text="{parts:[ {path:'Createdat'} ], formatter:'.date'}" id="text20" />-->
+                                                <Text xmlns="sap.m" text="{path: 'Createdat', formatter:'.date'}" id="text20"/>
+                                                
+                                            </sap.m:cells>
+                                        </sap.m:ColumnListItem>
+                                    </sap.m:items>
+
+                                    <sap.m:columns>
+                                        <sap.m:Column id="column0">
+                                            <sap.m:header>
+                                                <sap.m:Label text="{i18n>tbcolumnLogo}" id="label0"/>
+                                            </sap.m:header>
+                                        </sap.m:Column>
+
+                                        <sap.m:Column id="column1">
+                                            <sap.m:header>
+                                                <sap.m:Label text="{i18n>tbcolumnProdutoId}" id="label1"/>
+                                            </sap.m:header>
+                                        </sap.m:Column>
+
+                                        <sap.m:Column id="column2" width="16em">
+                                            <sap.m:header>
+                                                <sap.m:Label text="{i18n>tbcolumnNome}" id="label2"/>
+                                            </sap.m:header>
+                                        </sap.m:Column>
+
+                                        <sap.m:Column id="column0_1666386813237">
+                                            <sap.m:header>
+                                                <sap.m:Text text="{i18n>tbcolumnCategoria}" id="text9_1666386813236"/>
+                                            </sap.m:header>
+                                        </sap.m:Column>
+
+                                        <sap.m:Column id="column1_1666386834061" width="8em">
+                                            <sap.m:header>
+                                                <sap.m:Text text="{i18n>tbcolumnFornecedorId}" id="text10_1666386834061"/>
+                                            </sap.m:header>
+                                        </sap.m:Column>
+
+                                        <sap.m:Column id="column2_1666386880581" hAlign="Center">
+                                            <sap.m:header>
+                                                <sap.m:Text text="{i18n>tbcolumnUnMedida}" id="text11"/>
+                                            </sap.m:header>
+                                        </sap.m:Column>
+
+                                        <sap.m:Column id="column3">
+                                            <sap.m:header>
+                                                <sap.m:Text text="{i18n>tbcolumnPreco}" id="text12"/>
+                                            </sap.m:header>
+                                        </sap.m:Column>
+
+                                        <sap.m:Column id="column4">
+                                            <sap.m:header>
+                                                <sap.m:Text text="{i18n>tbcolumnStatus}" id="text13"/>
+                                            </sap.m:header>
+                                        </sap.m:Column>
+
+                                        <sap.m:Column id="column5" hAlign="Center">
+                                            <sap.m:header>
+                                                <sap.m:Text text="{i18n>tbcolumnDtCriacao}" id="text14"/>
+                                            </sap.m:header>
+                                        </sap.m:Column>
+                                    </sap.m:columns>
+                                </sap.m:Table>
+                            </content>
+
+                            <footerCustomActions/>
+
+                            <titleSnappedContent>
+                                <Title xmlns="sap.m" text="{i18n>headingTitleSnappedContent}" id="title0_1666104853007"/>
+                            </titleSnappedContent>
+                        </SemanticPage>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

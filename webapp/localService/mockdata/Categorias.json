@@ -1,0 +1,42 @@
+[
+    {
+        "Category": "CNTB",
+        "Description": "Notebook",
+        "__metadata": {
+            "uri": "/Categorias('CNTB')",
+            "type": "cds_zsd_producao_234.CategoriasType"
+        }
+    },
+    {
+        "Category": "CPDA",
+        "Description": "Digatl Organizer",
+        "__metadata": {
+            "uri": "/Categorias('CPDA')",
+            "type": "cds_zsd_producao_234.CategoriasType"
+        }
+    },
+    {
+        "Category": "CSCR",
+        "Description": "Screens",
+        "__metadata": {
+            "uri": "/Categorias('CSCR')",
+            "type": "cds_zsd_producao_234.CategoriasType"
+        }
+    },
+    {
+        "Category": "Ca 4",
+        "Description": "Description 4",
+        "__metadata": {
+            "uri": "/Categorias('Ca%204')",
+            "type": "cds_zsd_producao_234.CategoriasType"
+        }
+    },
+    {
+        "Category": "Ca 5",
+        "Description": "Description 5",
+        "__metadata": {
+            "uri": "/Categorias('Ca%205')",
+            "type": "cds_zsd_producao_234.CategoriasType"
+        }
+    }
+]
