@@ -1,4 +1,4 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.f" xmlns:fb="sap.ui.comp.filterbar" xmlns:svm="sap.ui.comp.smartvariants" controllerName="br.com.gestao.fioriappreport234.controller.Lista" displayBlock="true">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.f" xmlns:fb="sap.ui.comp.filterbar" xmlns:svm="sap.ui.comp.smartvariants" controllerName="br.com.gestao.fioriappadmin234.controller.Lista" displayBlock="true">
     <Shell id="shell">
         <App id="appID">
             <pages>
@@ -24,13 +24,21 @@
                                                 <sap.m:Input width="100%" placeholder="{i18n>fgitemNomeProdutoPlaceholder}" id="productNameInput"/>
                                             </fb:control>
                                         </fb:FilterGroupItem>
+
+                                         <fb:FilterGroupItem xmlns:sap.m="sap.m" id="_IDGenFilterGroupItem1" label="{i18n>fgitemCategoria}" name="Categoria Produto" labelTooltip="{i18n>fgitemCategoriaTooltip}" visibleInFilterBar="true" groupTitle="{i18n>fgitemCategoriaGroup}" groupName="Principal">
+                                            <fb:control>
+                                                <sap.m:Input width="100%" placeholder="{i18n>fgitemCategoriaPlaceholder}" id="productCategoryInput" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="onCategoria"/><!--"onCategoria"-->
+                                            </fb:control>
+                                        </fb:FilterGroupItem>                                       
                                     </fb:filterGroupItems>
                                 </fb:FilterBar>
                             </headerContent>
 
                             <titleMainAction/>
 
-                            <titleCustomTextActions/>
+                            <titleCustomTextActions>
+                                <Button xmlns="sap.m" id="button0" press="onNovoProduto" icon="sap-icon://add" text="{i18n>btnNovo}"/>
+                            </titleCustomTextActions>
 
                             <titleCustomIconActions/>
 
@@ -40,7 +48,7 @@
                                         <sap.m:ColumnListItem press=" onSelectedItem" type="Active" id="item0_1666185249636">
                                             <sap.m:cells>
                                                 <core:Icon src="sap-icon://product" size="3rem" id="icon0"/>
-                                                <Text xmlns="sap.m" text="{Productid}" id="text15"/>
+                                                <Text xmlns="sap.m" text="{Productid}" id="text15" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" cd:w5g.dt.context="/Produtos"/>
                                                 <ObjectIdentifier xmlns="sap.m" title="{Name}" text="{Description}" id="identifier0"/>
                                                 <Text xmlns="sap.m" text="{to_cat/Description}" id="text17"/>
                                                 <Text xmlns="sap.m" text="{Supplierid}" id="text18"/>
@@ -48,14 +56,14 @@
                                                 <!--{Price}-->
                                                 <ObjectNumber xmlns="sap.m" number="{ parts:[ {path:'Price'},{path:'Currencycode'} ], type: 'sap.ui.model.type.Currency', formatOptions:{showMeasure:false} }" unit="{Currencycode}" id="number0" state="Success"/>
                                                 <!--{Status}-->
-                                                <ObjectStatus xmlns="sap.m" text="{path: 'Status', formatter:'.statusProduto'}" state="{path: 'Status', formatter:'.stateProduto'}" id="status0" icon="{path: 'Status', formatter:'.iconProduto'}"/>
+                                                <ObjectStatus xmlns="sap.m" text="{path: 'Status', formatter:'.objFormatter.statusProduto'}" state="{path: 'Status', formatter:'.objFormatter.stateProduto'}" id="status0" icon="{path: 'Status', formatter:'.objFormatter.iconProduto'}"/>
                                                 <!--Createdat-->
                                                 <!--
                                                     { parts:[ {path:'Createdat'} ], formatter:'.date' }  >> { parts:[{path:'Parâmetro 1'},{path:'Parâmetro 2'}], formatter:'.NomeFunção' }
                                                     { path: 'Createdat', formatter:'.date' } >> { path:'Parâmetro 1', formatter:'.NomeFunção' }
                                                       
                                                 <Text xmlns="sap.m" text="{parts:[ {path:'Createdat'} ], formatter:'.date'}" id="text20" />-->
-                                                <Text xmlns="sap.m" text="{path: 'Createdat', formatter:'.date'}" id="text20"/>
+                                                <Text xmlns="sap.m" text="{path: 'Createdat', formatter:'.objFormatter.date'}" id="text20"/>
                                                 
                                             </sap.m:cells>
                                         </sap.m:ColumnListItem>

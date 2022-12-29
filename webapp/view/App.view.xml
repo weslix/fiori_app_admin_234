@@ -1,10 +1,10 @@
-<mvc:View controllerName="br.com.gestao.fioriappreport234.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="br.com.gestao.fioriappadmin234.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
     <Shell id="shell">
         <App id="appID">
             <pages>
-            <Page id="page" title="{i18n>title}">
-                <content />
-            </Page>
+                <Page id="page" title="{i18n>title}">
+                    <content />
+                </Page>
             </pages>
         </App>
     </Shell>

@@ -11,7 +11,7 @@ sap.ui.define([
     function (Controller, Label, Input, TextArea, SimpleForm) {
         "use strict";
 
-        return Controller.extend("br.com.gestao.fioriappreport234.controller.DataBinding", {
+        return Controller.extend("br.com.gestao.fioriappadmin234.controller.DataBinding", {
             onInit: function () {
                 //debugger;
                 var objModelJSON = new sap.ui.model.json.JSONModel();

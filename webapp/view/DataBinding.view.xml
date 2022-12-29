@@ -1,4 +1,4 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="br.com.gestao.fioriappreport234.controller.DataBinding" displayBlock="true">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="br.com.gestao.fioriappadmin234.controller.DataBinding" displayBlock="true">
     <Shell id="shell">
         <App id="app">
             <pages>

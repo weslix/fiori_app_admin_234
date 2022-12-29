@@ -7,7 +7,7 @@ sap.ui.define([
 
 	Opa5.extendConfig({
 		arrangements: new Startup(),
-		viewNamespace: "br.com.gestao.fioriappreport234.view.",
+		viewNamespace: "br.com.gestao.fioriappadmin234.view.",
 		autoWait: true
 	});
 });

@@ -7,9 +7,8 @@
     xmlns:svm="sap.ui.comp.smartvariants"
     xmlns="sap.uxap"
     xmlns:layout="sap.ui.layout"
-    controllerName="br.com.gestao.fioriappreport234.controller.Detalhes"
-    displayBlock="true"
->
+    controllerName="br.com.gestao.fioriappadmin234.controller.Detalhes"
+    displayBlock="true">
     <!--    <m:Shell id="shell">
         <m:App id="appID">
             <m:pages>
@@ -46,6 +45,11 @@
 
                 <actions>
                     <m:Button id="_IDGenButton1" text="{i18n>btnBack}" type="Emphasized" press="onNavBack" icon="sap-icon://nav-back" />
+
+                    <m:Button id="btnEdit" text="{i18n>btnEdit}" type="Emphasized" press="handleEditPress" icon="sap-icon://edit" />
+                    <m:Button id="btnDelete" text="{i18n>btnDelete}" type="Emphasized" press="onDelete" icon="sap-icon://delete" />
+                    <m:Button id="btnSave" text="{i18n>btnSave}" visible="false" type="Emphasized" press="onValida" icon="sap-icon://save" />
+                    <m:Button id="btnCancel" text="{i18n>btnCancel}" visible="false" type="Emphasized" press="handleCancelPress" icon="sap-icon://decline" />
                 </actions>
             </ObjectPageDynamicHeaderTitle>
         </headerTitle>
@@ -69,7 +73,7 @@
 
                 <m:VBox id="_IDGenVBox4" class="sapUiSmallMarginEnd sapUiSmallMarginBotton">
                     <m:Title id="_IDGenTitle5" text="{i18n>headerStatus}" class="sapUiTinyMarginBotton" />
-                    <m:ObjectStatus xmlns="sap.m" id="_IDGenObjectStatus1" text="{path: 'Status', formatter:'.statusProduto'}" state="{path: 'Status', formatter:'.stateProduto'}" icon="{path: 'Status', formatter:'.iconProduto'}" class="sapMObjectStatusLarge" />
+                    <m:ObjectStatus xmlns="sap.m" id="_IDGenObjectStatus1" text="{path: 'Status', formatter:'.objFormatter.statusProduto'}" state="{path: 'Status', formatter:'.objFormatter.stateProduto'}" icon="{path: 'Status', formatter:'.objFormatter.iconProduto'}" class="sapMObjectStatusLarge" />
                 </m:VBox>
 
                 <m:VBox id="_IDGenVBox5" class="sapUiSmallMarginEnd sapUiSmallMarginBotton">
@@ -85,7 +89,7 @@
 
                     <m:HBox id="_IDGenHBox5">
                         <m:Label id="_IDGenLabel6" text="{i18n>headerCreatedon}" class="sapUiSmallMarginEnd" />
-                        <m:Link id="_IDGenLink6" text="{path: 'Createdat', formatter:'.date'}" />
+                        <m:Link id="_IDGenLink6" text="{path: 'Createdat', formatter:'.objFormatter.date'}" />
                     </m:HBox>
                     <m:HBox id="_IDGenHBox6">
                         <m:Label id="_IDGenLabel7" text="{i18n>headerChangedby}" class="sapUiSmallMarginEnd" />
@@ -93,7 +97,7 @@
                     </m:HBox>
                     <m:HBox id="_IDGenHBox7">
                         <m:Label id="_IDGenLabel8" text="{i18n>headerChangeon}" class="sapUiSmallMarginEnd" />
-                        <m:Link id="_IDGenLink8" text="{path: 'Changedat', formatter:'.date'}" />
+                        <m:Link id="_IDGenLink8" text="{path: 'Changedat', formatter:'.objFormatter.date'}" />
                     </m:HBox>
                 </m:VBox>
             </m:HeaderContainer>
@@ -107,36 +111,7 @@
                 <subSections>
                     <ObjectPageSubSection id="_IDGenObjectPageSubSection1">
                         <blocks>
-                            <sap.ui.layout.form:SimpleForm
-                                xmlns:sap.ui.layout.form="sap.ui.layout.form"
-                                id="form0"
-                                class="sapUxAPObjectPageSubSectionAlignContent"
-                                editable="false"
-                                layout="ColumnLayout"
-                                labelSpanXL="3"
-                                labelSpanL="3"
-                                labelSpanM="3"
-                                labelSpanS="12"
-                                adjustLabelSpan="false"
-                                emptySpanXL="4"
-                                emptySpanL="4"
-                                emptySpanM="4"
-                                emptySpanS="0"
-                                columnsM="2"
-                                columnsL="3"
-                                columnsXL="4"
-                                singleContainerFullSize="false"
-                            >
-                                <sap.ui.layout.form:content>
-
-                                    <m:Label id="_IDGenLabel9" text="{i18n>sfCategory}"/>
-                                    <m:Text id="_IDGenText5"  text="{to_cat/Description}" class="SapMObjectNumberMedium"/>
-
-                                    <m:Label id="_IDGenLabel10" text="{i18n>sfSupplier}" />
-                                    <m:Text id="_IDGenText6"  text="{Supplierid} {Suppliername}" class="SapMObjectNumberMedium" />
-                                    
-                                </sap.ui.layout.form:content>
-                            </sap.ui.layout.form:SimpleForm>
+                            <m:VBox id="vboxViewBasicInfo" ></m:VBox>
                         </blocks>
                     </ObjectPageSubSection>
                 </subSections>
@@ -146,54 +121,22 @@
                 <subSections>
                     <ObjectPageSubSection id="_IDGenObjectPageSubSection2" titleUppercase="false">
                         <blocks>
-                            <sap.ui.layout.form:SimpleForm id="_IDGenSimpleForm1"
-                                xmlns:sap.ui.layout.form="sap.ui.layout.form"
-                                class="sapUxAPObjectPageSubSectionAlignContent"
-                                editable="false"
-                                layout="ColumnLayout"
-                                labelSpanXL="3"
-                                labelSpanL="3"
-                                labelSpanM="3"
-                                labelSpanS="12"
-                                adjustLabelSpan="false"
-                                emptySpanXL="4"
-                                emptySpanL="4"
-                                emptySpanM="4"
-                                emptySpanS="0"
-                                columnsM="2"
-                                columnsL="3"
-                                columnsXL="4"
-                                singleContainerFullSize="false"
-                            >
-                                <sap.ui.layout.form:content>
-
-                                    <m:Label id="_IDGenLabel11"  text="{i18n>sfMeasureunit}"/>
-                                    <m:Text id="_IDGenText7"   text="{Measureunit}" class="SapMObjectNumberMedium"/>
-
-                                    <m:Label id="_IDGenLabel12" text="{i18n>sfWeightmeasure}" />
-                                    <m:Text id="_IDGenText8"  text="{path: 'Weightmeasure', formatter:'.floatNumber'}" class="SapMObjectNumberMedium" />
-
-                                    <m:Label id="_IDGenLabel13"  text="{i18n>sfWeightunit}"/>
-                                    <m:Text id="_IDGenText9"   text="{Weightunit}" class="SapMObjectNumberMedium"/>
-
-                                    <m:Label id="_IDGenLabel14" text="{i18n>sfWidth}" />
-                                    <m:Text id="_IDGenText10"  text="{path: 'Width', formatter:'.floatNumber'}" class="SapMObjectNumberMedium" />                                  
-
-                                    <m:Label id="_IDGenLabel15"  text="{i18n>sfDepth}"/>
-                                    <m:Text id="_IDGenText11"  text="{path: 'Depth', formatter:'.floatNumber'}" class="SapMObjectNumberMedium" />
-
-                                    <m:Label id="_IDGenLabel16" text="{i18n>sfHeight}" />
-                                    <m:Text id="_IDGenText12"  text="{path: 'Height', formatter:'.floatNumber'}" class="SapMObjectNumberMedium" />
-
-                                    <m:Label id="_IDGenLabel17" text="{i18n>sfDimunit}" />
-                                    <m:Text id="_IDGenText13"  text="{Dimunit}" class="SapMObjectNumberMedium" />
-
-                                </sap.ui.layout.form:content>
-                            </sap.ui.layout.form:SimpleForm>                        
+                            <m:VBox id="vboxViewTechInfo" ></m:VBox>
                         </blocks>
                     </ObjectPageSubSection>
                 </subSections>
             </ObjectPageSection>
+
+            <ObjectPageSection id="_IDGenObjectPageSection3" visible="false" titleUppercase="false" title="{i18n>sectionUpdateProduct}">
+                <subSections>
+                    <ObjectPageSubSection id="_IDGenObjectPageSubSection3" titleUppercase="false">
+                        <blocks>
+                            <m:VBox id="vboxViewChangeProduct" ></m:VBox>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
         </sections>
         <footer>
 

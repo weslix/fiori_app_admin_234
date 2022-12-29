@@ -2,7 +2,7 @@
 
 specVersion: "2.5"
 metadata:
-  name: br.com.gestao.fioriappreport234
+  name: br.com.gestao.fioriappadmin234
 type: application
 framework:
   name: SAPUI5
@@ -47,5 +47,5 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: br.com.gestao.fioriappreport234
+        component: br.com.gestao.fioriappadmin234
         ui5Theme: sap_fiori_3

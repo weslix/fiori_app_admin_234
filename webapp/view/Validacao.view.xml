@@ -1,0 +1,81 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="br.com.gestao.fioriappadmin234.controller.Validacao" displayBlock="true">
+    <App id="_IDGenApp0">
+        <pages>
+            <Page xmlns="sap.m" id="pageId" title="Page Title" floatingFooter="true">
+                <headerContent>
+                    <Button icon="sap-icon://action" tooltip="Share" id="button0"/>
+                </headerContent>
+                <content>
+                    <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" id="form0">
+                        <sap.ui.layout.form:content>
+                            <!-- << Validação Texto >> maxLength não fucniona somente com string no Input -->
+                            <Label  text="Validacao Texto" width="100%" id="label0"/>
+                            <Input  xmlns="sap.m" maxLength="5" valueStateText="Insira pelo menos 3 caracteres" 
+                                    value="{ path: 'MDL_Produto>/Name',                                          
+                                            type: 'sap.ui.model.type.String',                                          
+                                            constraints:{search: '^[A-Za-z ]+$', minLength: 3, maxLength:50} }" id="input0"/>
+
+                            <!-- << Validação Número >>  -->       
+                            <Label  text="Validacao Numero" width="100%" id="label1"/>
+                            <Input  xmlns="sap.m" id="_IDGenInput1" type="Number" valueStateText="Insira pelo menos 3 caracteres no máximo 10" 
+                                    value="{ path: 'MDL_Produto>/Numero',                                              
+                                            type: 'sap.ui.model.type.String',                                              
+                                            constraints:{search: '^[0-9]*$', minLength: 3, maxLength:10} }"/>    
+
+                            <!-- << Validação Data >>  -->    
+                            <Label text="Validacao Data" width="100%" id="label2"/>    
+                            <DatePicker xmlns="sap.m" id="picker0"
+                                        value="{ path: 'MDL_Produto>/CreatedAt',                                              
+                                                type: 'sap.ui.model.type.Date',
+                                                formatOptions:{
+                                                    source:{
+                                                        pattern:'dd/MM/YYYY'
+                                                    },
+                                                    pattern:'dd/MM/YYYY'
+                                                },                                              
+                                                constraints:{
+                                                    minimum: '01/06/2022'
+                                                }
+                                            }"/>     
+
+                            <!-- << Validação Moeda >>  -->       
+                            <Label  text="Validacao Moeda" width="100%" id="label3"/>
+                            <Input  xmlns="sap.m" id="_IDGenInput3" valueStateText="Insira um valor" 
+                                    value="{ path: 'MDL_Produto>/Price',                                              
+                                            type: 'sap.ui.model.type.Currency',                                              
+                                            constraints:{minimum: 5, maximum: 10000} }"/>
+
+                            <Label  text="Validacao Moeda 5 casas decimais" width="100%" id="label4"/>
+                            <Text id="_IDGenText1" text="{ path: 'MDL_Produto>/Price',                                              
+                                                            type: 'sap.ui.model.type.Currency',                                              
+                                                            formatOptions:{
+                                                                minFractionDigits: 5
+                                                            }}"                                             
+                                                        ></Text>   
+
+                            <!-- << Validação Float >>  -->       
+                            <Label  text="Validacao Moeda" width="100%" id="label5"/>
+                            <Input  xmlns="sap.m" id="_IDGenInput5" valueStateText="Insira um valor" 
+                                    value="{ path: 'MDL_Produto>/Largura',                                              
+                                            type: 'sap.ui.model.type.Float',                                              
+                                            formatOptions:{
+                                                    maxFractionDigits:2,
+                                                    minFractionDigits:2 
+                                                },                                              
+                                                constraints:{
+                                                    minimum: 5,
+                                                    maximum: 100
+                                                } }"/>                                                                                                                                 
+                        </sap.ui.layout.form:content>
+                    </sap.ui.layout.form:SimpleForm>
+                </content>
+                <footer>
+                    <OverflowToolbar id="toolbar1">
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                        <Button id="_IDGenButton1" type="Accept" text="Accept" press="verModel"/>
+                    </OverflowToolbar>
+                </footer>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>
